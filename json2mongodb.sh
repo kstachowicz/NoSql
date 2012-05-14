@@ -1,12 +1,14 @@
 #!/bin/bash
 #import technology diggs from digg.com to mongodb
 
-hostname = $1;
-db=$2;
-collection=$3;
-fileName = $4;
 
-if [ $# -ne 4 ]; then
+
+if [ $# -ne 3 ]; then
+
+
+#db=$1;
+#collection=$2;
+#myfileName = $3;
 
 	clear
 
@@ -27,10 +29,8 @@ if [ $# -ne 4 ]; then
 			"H" | "h" )
 			echo
 			echo "You pressed [H]. That means, you want to know more about using the script"
-			echo "Run file: ./json2mongodb.sh [HOSTNAME] [NAME_OF_THE_DATABASE] [NAME_OF_THE_COLLECTION] [JSON_FILE_PATH]"
-			echo "Example: ./json2mongodb.sh localhost test diggs technology.json"
-			#echo "We assume you are working on the localhost database. Please edit the script"
-			#echo "if you are using another host"
+			echo "Run file: ./json2mongodb.sh [NAME_OF_THE_DATABASE] [NAME_OF_THE_COLLECTION] [JSON_FILE_PATH]"
+			echo "Example: ./json2mongodb.sh test diggs technology.json"
 			;;
 
 			"Q" | "q" )
@@ -39,8 +39,8 @@ if [ $# -ne 4 ]; then
 			
 		esac
 else
-	#mongoimport --host localhost --db $db --collection $collection --type json --file $fileName
-	mongoimport --host hostname --db $db --collection $collection --type json --file $fileName
+	echo "Inserting into '" $1 "' database collection named '" $2 "' based on data from  '" $3 "' file"
+	mongoimport --host localhost --db $1 --collection $2 --type json --file $3
 fi
 
 

@@ -1,11 +1,9 @@
 #!/bin/bash
 #import technology diggs from digg.com to couchdb
 
-hostname = $1;
-db=$2;
-fileName = $3;
 
-if [ $# -ne 1 ]; then
+if [ $# -ne 3 ]; then
+
 
 	clear
 
@@ -28,9 +26,6 @@ if [ $# -ne 1 ]; then
 			echo "You pressed [H]. That means, you want to know more about using the script"
 			echo "Run file: ./json2couchdb.sh [HOSTNAME] [NAME_OF_THE_DATABASE] [JSON_FILE_PATH]"
 			echo "Example: ./json2couchdb.sh http://localhost:5984 test technology.json"
-			
-			#echo "We assume you are working on the localhost database. Please edit the script"
-			#echo "if you are using another host"
 			;;
 
 			"Q" | "q" )
@@ -39,17 +34,23 @@ if [ $# -ne 1 ]; then
 			;;
 			esac
 else
-	echo "Deleting the database: $dbName "
-	#curl -X DELETE  "http://localhost:5984/"$db
-	curl -X DELETE  $hostname/$db
 
-	echo "Creating new database: $dbName "
-	curl -X PUT  $hostname/$db
+#$1-host
+#$2-db
+#$3-filename
+
+	echo "Deleting the database: " $1"/"$2
+
+	curl -X DELETE  $1"/"$2
+
+
+	echo "Creating new database: "$1"/"$2
+	curl -X PUT  $1"/"$2
 
 	while read line 
 	do
-		curl -d "$line" -X POST -H "Content-Type: application/json" $hostname/$db 
-	done < $fileName;
+		curl -d "$line" -X POST -H "Content-Type: application/json" $1"/"$2 
+	done < $3;
 
 fi
 
