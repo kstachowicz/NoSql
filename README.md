@@ -1,5 +1,4 @@
 NoSql
-
 =====
 
 Dane
@@ -10,7 +9,6 @@ import
 ------------
 a) Aby uruchomić  plik importu pliku *.json do bazy MongoDB z danymi testowymi należy wpisać:
 
-Wiekszosc skryptow zostala napisana w JS, aby uruchomic konkretny skrypt nalezy wywolac polecenie:
 ``` bash
   $ ./json2mongodb.sh test diggs technology.json
 ```
