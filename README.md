@@ -3,7 +3,7 @@ NoSql
 
 Dane
 ------------
-Dane wykorzystywane w projekcie zostały pobrane z serwisu digg.com i zawierają listę 100 ostatnich wpisów (dane z 13.05.2012) nt. technologi.
+Dane wykorzystywane w projekcie zostały pobrane z serwisu digg.com i zawierają listę 100 ostatnich wpisów (dane z 13.05.2012) nt. technologii.
 
 import
 ------------
