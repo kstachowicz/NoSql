@@ -34,6 +34,8 @@ Gdzie http://localhost:5984 - adres bazy wraz z portem, test- nazwa bazy, diggs-
 
 map reduce
 ------------
+Funkcja MapReduce zwraca statystyki dotyczące ilości powtórzeń liczby wykopów na stronie.
+
 MapReduce dla bazy MongoDB nazy uruchomić w następujący sposób:
 ``` bash
   $ mongo mongoMapReduce.js --shell
