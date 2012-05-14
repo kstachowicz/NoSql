@@ -42,7 +42,7 @@ MapReduce dla bazy MongoDB nazy uruchomić w następujący sposób:
 ```
 Wynik działanie sprawdzamy dzięki:
 ``` js
-db.diggs.find()
+db.res.find()
 ```
 
 Z kolei MapReduce dla bazy CouchDB wymaga zainstalowanych modułów `cradle` i `util`
