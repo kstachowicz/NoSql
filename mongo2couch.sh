@@ -41,12 +41,16 @@ else
 #$2- db
 #$3- collection
 		echo "Exporting data from" $2 "database, collection: " $3
-		mongoexport --db $2 --collection $3 --out mongoData.json
+		mongoexport --db $2 --collection $3 --out mongoData1.json
 		
-		cat mongoData.json | tr "{ "$oid" : " łańcuch2
+		echo "Preparing data structure to be readable by couchDB"
+		cat mongoData1.json | sed -e 's/"_id[^\}]*\},//g' > mongoData2.json
+
 		echo "Exporting completed. Migrating data to couchdb:" $1"/"$2
-		./json2couchdb.sh $1 $2 mongoData.json
-		#rm mongoData.json
+		./json2couchdb.sh $1 $2 mongoData2.json
+		echo "All action completed. Time to relax :)"
+		rm mongoData1.json
+		rm mongoData2.json
 fi
 
 
