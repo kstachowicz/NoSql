@@ -66,7 +66,8 @@ format json
     "link":"http://cometodeal.wordpress.com/2012/04/18/digital-camera-cleaning-and-maintenance-written-by-cometodeal-online-store/",
     "href":"http://digg.com/news/technology/digital_camera_cleaning_and_maintenance_written_by_cometodeal_online_store",
     "id":"20120418095909:b7720394-e9e6-46ed-b6c2-912af258b15c"
-}```
+}
+```
 
 map reduce
 ------------
