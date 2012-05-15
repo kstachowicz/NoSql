@@ -77,7 +77,7 @@ MapReduce dla bazy MongoDB nazy uruchomić w następujący sposób:
 ``` bash
   $ mongo mongoMapReduce.js --shell
 ```
-Wynik działanie sprawdzamy dzięki:
+Wyniki mp sprawdzamy przy pomocy:
 ``` js
 db.res.find()
 ```
