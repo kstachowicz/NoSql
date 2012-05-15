@@ -94,11 +94,11 @@ Z kolei MapReduce dla bazy CouchDB uruchamiamy przy pomocy node
 Wyniki dla couchMapReduce wyglądają następująco:
 ```
 1: 47
-2: 13
+2: 14
 3: 5
 4: 8
 5: 6
-6: 3
+6: 4
 7: 3
 20: 1
 21: 1
@@ -115,4 +115,4 @@ Wyniki dla couchMapReduce wyglądają następująco:
 95: 1
 383: 1
 ```
-Link mający 1 digg wystąpił 1 raz, a mający 2 diggi wystąpił 13 razy, itd.
+Link mający 1 digg wystąpił 47 razy, a mający 2 diggi wystąpił 14 razy, itd.
