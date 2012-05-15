@@ -3,7 +3,7 @@ NoSql
 
 Dane
 ------------
-Dane wykorzystywane w projekcie zostały pobrane z serwisu digg.com i zawierają listę 100 ostatnich wpisów (dane z 13.05.2012) nt. technologii.
+Dane wykorzystywane w projekcie zostały pobrane z serwisu digg.com i zawierają listę 100 ostatnich wpisów (dane z 13.05.2012) nt. technologii. Dane te zostały pobrane przy pomocy programu napisanego w języku c# i zduplikowane dziesięciokrotnie, aby zwiększyć liczbę informacji w bazie (łącznie ~1000).
 
 import
 ------------
@@ -27,15 +27,46 @@ export
 Import danych z bazy MongoDB do CouchDB znajduje się w pliku `mongo2couch.sh`
 
 ``` bash
-  $ ./ mongo2couch.sh http://localhost:5984 test diggs
+  $ ./mongo2couch.sh http://localhost:5984 test diggs
 ```
 Gdzie http://localhost:5984 - adres bazy wraz z portem, test- nazwa bazy, diggs- nazwa kolekcji w MongoDB
 
 format json
 ------------
 ```json
-{"status":"upcoming","container":{"name":"Technology","short_name":"technology"},"description":"With a digital camera we easily record beauties and exciting and then enjoy these fantastic videos from PC or TV. We maintain and clean our camera in different ways. Here are some tips summary for ...","title":"Digital Camera Cleaning and Maintenance-Written by ComeToDeal online store","submit_date":1334743149,"media":0,"diggs":7,"comments":1,"thumbnail":{"src":"http://cdn3.diggstatic.com/story/digital_camera_cleaning_and_maintenance_written_by_cometodeal_online_store/t.png","contentType":"image/png","originalheight":300,"height":62,"width":62,"originalwidth":300},"topic":{"name":"Technology","short_name":"technology"},"shorturl":{"short_url":"http://digg.com/news/technology/digital_camera_cleaning_and_maintenance_written_by_cometodeal_online_store","view_count":0},"promote_date":null,"link":"http://cometodeal.wordpress.com/2012/04/18/digital-camera-cleaning-and-maintenance-written-by-cometodeal-online-store/","href":"http://digg.com/news/technology/digital_camera_cleaning_and_maintenance_written_by_cometodeal_online_store","id":"20120418095909:b7720394-e9e6-46ed-b6c2-912af258b15c"}
-```
+{
+    "diggs":7,
+    "status":"upcoming",
+    "container":{
+        "name":"Technology",
+        "short_name":"technology"
+    },
+    "description":"With a digital camera we easily record beauties and exciting ...",
+    "title":"Digital Camera Cleaning and Maintenance-Written by ComeToDeal online store",
+    "submit_date":1334743149,
+    "media":0,
+    "comments":1,
+    "thumbnail":{
+        "src":"http://cdn3.diggstatic.com/story/digital_camera_cleaning_and_maintenance_written_by_cometodeal_online_store/t.png",
+        "contentType":"image/png",
+        "originalheight":300,
+        "height":62,
+        "width":62,
+        "originalwidth":300
+    },
+    "topic":{
+        "name":"Technology",
+        "short_name":"technology"
+    },
+    "shorturl":{
+        "short_url":"http://digg.com/news/technology/digital_camera_cleaning_and_maintenance_written_by_cometodeal_online_store",
+        "view_count":0
+    },
+    "promote_date":null,
+    "link":"http://cometodeal.wordpress.com/2012/04/18/digital-camera-cleaning-and-maintenance-written-by-cometodeal-online-store/",
+    "href":"http://digg.com/news/technology/digital_camera_cleaning_and_maintenance_written_by_cometodeal_online_store",
+    "id":"20120418095909:b7720394-e9e6-46ed-b6c2-912af258b15c"
+}```
 
 map reduce
 ------------
@@ -50,7 +81,7 @@ Wynik działanie sprawdzamy dzięki:
 db.res.find()
 ```
 Wyniki:
-```
+```json
 {
 	"result" : "res",
 	"timeMillis" : 116,
@@ -71,17 +102,6 @@ Wyniki:
 { "_id" : 7, "value" : 3 }
 { "_id" : 20, "value" : 1 }
 { "_id" : 21, "value" : 1 }
-{ "_id" : 40, "value" : 1 }
-{ "_id" : 41, "value" : 1 }
-{ "_id" : 58, "value" : 1 }
-{ "_id" : 60, "value" : 1 }
-{ "_id" : 65, "value" : 1 }
-{ "_id" : 72, "value" : 1 }
-{ "_id" : 73, "value" : 1 }
-{ "_id" : 74, "value" : 1 }
-{ "_id" : 75, "value" : 1 }
-{ "_id" : 76, "value" : 1 }
-{ "_id" : 95, "value" : 1 }
 has more
 
 ```
@@ -103,16 +123,6 @@ Wyniki dla couchMapReduce wyglądają następująco:
 20: 1
 21: 1
 40: 1
-41: 1
-58: 1
-60: 1
-65: 1
-72: 1
-73: 1
-74: 1
-75: 1
-76: 1
-95: 1
-383: 1
+[...]
 ```
 Link mający 1 digg wystąpił 47 razy, a mający 2 diggi wystąpił 14 razy, itd.
