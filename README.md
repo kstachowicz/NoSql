@@ -31,6 +31,11 @@ Import danych z bazy MongoDB do CouchDB znajduje się w pliku `mongo2couch.sh`
 ```
 Gdzie http://localhost:5984 - adres bazy wraz z portem, test- nazwa bazy, diggs- nazwa kolekcji w MongoDB
 
+format json
+------------
+```json
+{"status":"upcoming","container":{"name":"Technology","short_name":"technology"},"description":"With a digital camera we easily record beauties and exciting and then enjoy these fantastic videos from PC or TV. We maintain and clean our camera in different ways. Here are some tips summary for ...","title":"Digital Camera Cleaning and Maintenance-Written by ComeToDeal online store","submit_date":1334743149,"media":0,"diggs":7,"comments":1,"thumbnail":{"src":"http://cdn3.diggstatic.com/story/digital_camera_cleaning_and_maintenance_written_by_cometodeal_online_store/t.png","contentType":"image/png","originalheight":300,"height":62,"width":62,"originalwidth":300},"topic":{"name":"Technology","short_name":"technology"},"shorturl":{"short_url":"http://digg.com/news/technology/digital_camera_cleaning_and_maintenance_written_by_cometodeal_online_store","view_count":0},"promote_date":null,"link":"http://cometodeal.wordpress.com/2012/04/18/digital-camera-cleaning-and-maintenance-written-by-cometodeal-online-store/","href":"http://digg.com/news/technology/digital_camera_cleaning_and_maintenance_written_by_cometodeal_online_store","id":"20120418095909:b7720394-e9e6-46ed-b6c2-912af258b15c"}
+```
 
 map reduce
 ------------
@@ -44,13 +49,49 @@ Wynik działanie sprawdzamy dzięki:
 ``` js
 db.res.find()
 ```
+Wyniki:
+```
+{
+	"result" : "res",
+	"timeMillis" : 116,
+	"counts" : {
+		"input" : 101,
+		"emit" : 101,
+		"output" : 21
+	},
+	"ok" : 1,
+}
+> db.res.find()
+{ "_id" : 1, "value" : 47 }
+{ "_id" : 2, "value" : 14 }
+{ "_id" : 3, "value" : 5 }
+{ "_id" : 4, "value" : 8 }
+{ "_id" : 5, "value" : 6 }
+{ "_id" : 6, "value" : 4 }
+{ "_id" : 7, "value" : 3 }
+{ "_id" : 20, "value" : 1 }
+{ "_id" : 21, "value" : 1 }
+{ "_id" : 40, "value" : 1 }
+{ "_id" : 41, "value" : 1 }
+{ "_id" : 58, "value" : 1 }
+{ "_id" : 60, "value" : 1 }
+{ "_id" : 65, "value" : 1 }
+{ "_id" : 72, "value" : 1 }
+{ "_id" : 73, "value" : 1 }
+{ "_id" : 74, "value" : 1 }
+{ "_id" : 75, "value" : 1 }
+{ "_id" : 76, "value" : 1 }
+{ "_id" : 95, "value" : 1 }
+has more
+
+```
 
 Z kolei MapReduce dla bazy CouchDB uruchamiamy przy pomocy node
 ``` bash
   $ node couchMapReduce.js 
 ```
 
-Wyniki MapReduce wyglądają następująco:
+Wyniki dla couchMapReduce wyglądają następująco:
 ```
 1: 47
 2: 13
