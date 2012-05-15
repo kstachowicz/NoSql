@@ -31,7 +31,7 @@ Import danych z bazy MongoDB do CouchDB znajduje się w pliku `mongo2couch.sh`
 ```
 Gdzie http://localhost:5984 - adres bazy wraz z portem, test- nazwa bazy, diggs- nazwa kolekcji w MongoDB
 
-format json
+przykład rekordu json
 ------------
 ```json
 {
