@@ -94,15 +94,16 @@ Wyniki:
 	"ok" : 1,
 }
 > db.res.find()
-{ "_id" : 1, "value" : 47 }
-{ "_id" : 2, "value" : 14 }
-{ "_id" : 3, "value" : 5 }
-{ "_id" : 4, "value" : 8 }
-{ "_id" : 5, "value" : 6 }
-{ "_id" : 6, "value" : 4 }
-{ "_id" : 7, "value" : 3 }
-{ "_id" : 20, "value" : 1 }
-{ "_id" : 21, "value" : 1 }
+{ "_id" : 1, "value" : 516 }
+{ "_id" : 2, "value" : 154 }
+{ "_id" : 3, "value" : 54 }
+{ "_id" : 4, "value" : 83 }
+{ "_id" : 5, "value" : 63 }
+{ "_id" : 6, "value" : 44 }
+{ "_id" : 7, "value" : 33 }
+{ "_id" : 20, "value" : 11 }
+{ "_id" : 21, "value" : 11 }
+{ "_id" : 40, "value" : 11 }
 has more
 
 ```
@@ -114,16 +115,17 @@ Z kolei MapReduce dla bazy CouchDB uruchamiamy przy pomocy node
 
 Wyniki dla couchMapReduce wyglądają następująco:
 ```
-1: 47
-2: 14
-3: 5
-4: 8
-5: 6
-6: 4
-7: 3
-20: 1
-21: 1
-40: 1
+1: 516
+2: 143
+3: 54
+4: 83
+5: 63
+6: 33
+7: 33
+20: 11
+21: 11
+40: 11
+
 [...]
 ```
 Link mający 1 digg wystąpił 47 razy, a mający 2 diggi wystąpił 14 razy, itd.
