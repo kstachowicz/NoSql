@@ -10,5 +10,5 @@ r = function(key, values) {
 	return sum;
 };	 
 
-result = db.links8.mapReduce(m, r, {out: "res"});
+result = db.diggs.mapReduce(m, r, {out: "res"});
 printjson(result);
