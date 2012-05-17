@@ -94,16 +94,17 @@ Wyniki:
 	"ok" : 1,
 }
 > db.res.find()
-{ "_id" : 1, "value" : 516 }
-{ "_id" : 2, "value" : 154 }
-{ "_id" : 3, "value" : 54 }
-{ "_id" : 4, "value" : 83 }
-{ "_id" : 5, "value" : 63 }
-{ "_id" : 6, "value" : 44 }
-{ "_id" : 7, "value" : 33 }
-{ "_id" : 20, "value" : 11 }
-{ "_id" : 21, "value" : 11 }
-{ "_id" : 40, "value" : 11 }
+{ "_id" : 1, "value" : 474 }
+{ "_id" : 2, "value" : 133 }
+{ "_id" : 3, "value" : 42 }
+{ "_id" : 4, "value" : 85 }
+{ "_id" : 5, "value" : 65 }
+{ "_id" : 6, "value" : 31 }
+{ "_id" : 7, "value" : 30 }
+{ "_id" : 20, "value" : 10 }
+{ "_id" : 21, "value" : 10 }
+{ "_id" : 40, "value" : 10 }
+
 has more
 
 ```
@@ -115,16 +116,16 @@ Z kolei MapReduce dla bazy CouchDB uruchamiamy przy pomocy node
 
 Wyniki dla couchMapReduce wyglądają następująco:
 ```
-1: 516
-2: 143
-3: 54
-4: 83
-5: 63
-6: 33
-7: 33
-20: 11
-21: 11
-40: 11
+1: 474
+2: 133
+3: 42
+4: 85
+5: 65
+6: 31
+7: 30
+20: 10
+21: 10
+40: 10
 
 [...]
 ```
